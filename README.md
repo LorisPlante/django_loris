@@ -13,4 +13,10 @@ django-admin startproject config .
 
 # ajouter l'app
 django-admin startapp www  # ("www" nom de l'app)
+
+
+
+# test fonctionnement
+python manage.py runserver
+
 ```
