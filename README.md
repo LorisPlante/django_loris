@@ -16,7 +16,13 @@ django-admin startapp www  # ("www" nom de l'app)
 
 
 
-# test fonctionnement
+# test fonctionnement / lancer l'app
 python manage.py runserver
+
+
+# configurer la base de données
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
 
 ```
