@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!-- siteApp/templates/article_list.html -->
+{% block content %}
+<div class="row">
+  <h1 class="col-12">Liste des Articles</h1>
+  {% for article in articles %}
+  <div class="col-2 mb-2">
+    {% if article.thumb %}
+    <img src="{{ article.thumb.url }}" alt="{{ article.title }}" class="img-fluid" />
+    {% endif %}
+    <p>{{ article.title }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

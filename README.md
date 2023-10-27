@@ -64,3 +64,13 @@ python manage.py runserver
     - charger les images, attacher aux articles
     - tags
 - 'python manage.py runscript import.py'
+
+# Rendu routage url / templates
+
+- templates/
+  - base.html
+- siteApp/templates/
+  - list.html
+  - single.html
+  - categ.html
+  - tags.html
