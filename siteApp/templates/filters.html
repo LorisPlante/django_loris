@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+<!-- siteApp/templates/filters.html - VERSION SIMPLIFIEE -->
+{% block content %}
+
+<p><a href="/">Index</a></p>
+
+<h1>{{ title }}</h1>
+
+<ul>
+  {% for article in articles %}
+  <li><a href="{% url 'article_detail' article.pk %}">{{ article.title}}</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

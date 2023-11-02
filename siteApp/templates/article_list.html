@@ -5,10 +5,13 @@
   <h1 class="col-12">Liste des Articles</h1>
   {% for article in articles %}
   <div class="col-2 mb-2">
-    {% if article.thumb %}
-    <img src="{{ article.thumb.url }}" alt="{{ article.title }}" class="img-fluid" />
-    {% endif %}
-    <p>{{ article.title }}</p>
+    <a href="{% url 'article_detail' article.pk %}" style="text-decoration: none; color: #111">
+      {% if article.thumb %}
+      <img src="{{ article.thumb.url }}" alt="{{ article.title }}" class="img-fluid" />
+      {% endif %}
+      <p>{{ article.title }}</p>
+      <p>{{ article.created_at }}</p>
+    </a>
   </div>
   {% endfor %}
 </div>

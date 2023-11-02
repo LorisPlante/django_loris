@@ -1,9 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Article</title>
-  </head>
-  <body></body>
-</html>
+{% extends 'base.html' %}
+<!-- www/templates/article_single.html -->
+{% block content %}
+
+<p><a href="/">Index</a></p>
+
+<div class="row">
+  <h1 class="col-12">{{ article.title }}</h1>
+  <div class="col-8">
+    <div>{{article.content|linebreaks}}</div>
+    <p>Catégorie : <a href="{% url 'cat_list' article.category.pk %}">{{ article.category.title }}</a></p>
+    <p>
+      Tags : {% for tag in article.tags.all %}
+      <a href="{% url 'tag_list' tag.pk %}">{{ tag.word }}</a> {% endfor %}
+    </p>
+  </div>
+  <div class="col-4">
+    {% if article.cover %}
+    <img src="{{ article.cover.url }}" alt="{{ article.title }}" class="img-fluid" />
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
